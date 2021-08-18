@@ -4,14 +4,20 @@
   Owner.create - Create means saved
 =end
 
-class Owner
-  attr_accessor :name # instance methods
+class Owner # has many pets
+  attr_accessor :name, :pets # instance methods
 
   @@all = [] # class variable
 
   def initialize(name) # instance method
     self.name = name # writer method invocation
+    self.pets = []
     # @name - instance variable
+  end
+
+  def add_pet(pet)
+    self.pets << pet unless self.pets.include?(pet)
+    pet.owner = self unless pet.owner
   end
 
   # new calls initialize on the instance it creates behind the scenes

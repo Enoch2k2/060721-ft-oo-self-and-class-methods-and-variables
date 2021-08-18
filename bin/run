@@ -2,12 +2,4 @@
 
 require_relative "../config/environment"
 
-Owner.find_or_create_by_name("Brian")
-Owner.find_or_create_by_name("Sarah")
-Owner.find_or_create_by_name("Sarah")
-Owner.find_or_create_by_name("Samantha")
-
-Pet.new("Fido")
-Pet.new("Garfield")
-
-binding.pry
+Cli.new.start
